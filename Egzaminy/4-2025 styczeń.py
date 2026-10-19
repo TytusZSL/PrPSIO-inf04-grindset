@@ -1,20 +1,11 @@
 # 2025 styczeń
 import random
 
-def special_list_test():
-    list_a = SpecialList(25)
-    list_a.display_all()
-    found = list_a.find_item(10)
-    if found != -1:
-        print(f"Liczbę 10 znaleziono na indeks = {found}")
-    print(f"Razem nieparzystych: {list_a.display_odds()}")
-    print(f"Średnia wszystkich elementów: {list_a.calc_average()}")
-
 class SpecialList:
     def __init__(self, length):
         self.itemsCount = length
         for i in range(length):
-            self.items.append(random.randint(1, 1000))
+            self.items.append(random.randint(1, 1000+1))
 
     def display_all(self):
         for i in range(self.itemsCount):
@@ -43,3 +34,12 @@ class SpecialList:
 
     itemsCount = 0
     items = []
+
+if __name__ == '__main__':
+    list_a = SpecialList(25)
+    list_a.display_all()
+    found = list_a.find_item(10)
+    print(f"Razem nieparzystych: {list_a.display_odds()}")
+    if found != -1:
+        print(f"Liczbę 10 znaleziono na indeks = {found}")
+    print(f"Średnia wszystkich elementów: {list_a.calc_average()}")
